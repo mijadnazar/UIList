@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let list = ["John", "Ryan", "Olivia", "Ted", "Ava"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let tableView = UIList(on: list) { item in
+            let label = UILabel()
+            label.text = item
+            
+            return label
+        }
+            .frame(self.view.bounds)
+        
+        self.view.addSubview(tableView)
     }
-
-
 }
-
